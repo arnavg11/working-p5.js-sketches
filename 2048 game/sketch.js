@@ -1,14 +1,15 @@
-var game = [
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-  ],
-  scl
+var game, scl, gameEnd
 const s = 32
 function setup() {
   createCanvas(600, 600);
+  gameEnd = false
   scl = height / 4
+  game = [
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+  ]
   for (let i = 0; i < 2; i++) {
     pickRandomSpot()
   }
@@ -84,7 +85,7 @@ function checkEquals(arr){
 }
 
 function keyPressed() {
-  let x = unlinkCopy()
+  let pgame = unlinkCopy()
   switch (keyCode) {
     case 87:
       shiftUp();
@@ -111,8 +112,33 @@ function keyPressed() {
       shiftRight();
       break;
   }
-  if(!checkEquals(x))pickRandomSpot()
+      if(!checkEquals(pgame))pickRandomSpot()
+
+  let x = unlinkCopy()
+  shiftUp()
+  if(!checkEquals(x)){
+    game = x;
+    return;
+  }
+  shiftDown()
+  if(!checkEquals(x)){
+    game = x;
+    return;
+  }
+  shiftLeft()
+  if(!checkEquals(x)){
+    game = x;
+    return;
+  }
+  shiftRight()
+  if(!checkEquals(x)){
+    game = x;
+    return;
+  }
+  if(gameEnd)setup()
+  gameEnd = true
 }
+
 
 function shiftDown() {
   for (let x = 0; x < 4; x++) {
