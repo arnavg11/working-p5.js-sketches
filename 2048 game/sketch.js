@@ -7,7 +7,7 @@ var game = [
   scl
 const s = 32
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(600, 600);
   scl = height / 4
   for (let i = 0; i < 2; i++) {
     pickRandomSpot()
