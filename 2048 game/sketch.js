@@ -48,6 +48,7 @@ function draw() {
         case 8: fill('#edcc61'); textColor = 255;off=s/1.5; break;
         case 9: fill('#edc850'); textColor = 255;off=s/1.5; break;
         case 10: fill('#edc53f'); textColor = 255;off=s/1.1; break;
+        case 11: fill('#edc53f'); textColor = 255;off=s/1.1; break;
         default: fill('#cac1b5')
       }
       
