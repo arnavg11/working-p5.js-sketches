@@ -1,4 +1,4 @@
-this is my p5.js version of laser chess
+this is my p5.js version of laser chess. there are also 2 .txt files that show my notes while making this.
 
 for rules check the following -
     
